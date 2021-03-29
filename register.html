@@ -1,14 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 </head>
 
 <body>
+    <section class="overlay">
+        <h1>Sign Up</h1>
+        <button onclick="window.location.href='index.html';">
+            <h2>Accueil</h2>
+        </button>
+        <p>Create an account:</p>
+        <form action="submission.html" method="GET">
+            <label for="username">Username:</label>
+            <br>
+            <input id="username" name="username" type="text" required minlength="3" maxlength="15">
+            <br>
+            <label for="firstname">Firstname:</label>
+            <br>
+            <input id="firstname" name="firstname" type="text" required>
+            <br>
+            <label for="astname">Lastname:</label>
+            <br>
+            <input id="lastname" name="lastname" type="text" required>
+            <br>
+            <label for="pw">Password:</label>
+            <br>
+            <input id="pw" name="pw" type="password" required minlength="8" maxlength="15">
+            <br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </section>
 
 </body>
 
