@@ -1,0 +1,26 @@
+@ echo off
+start image_01
+image_01
+la prochaine fois que tu me fait chier c pire -_-
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+mkdir ahahahahahahahahahahahahacker
+exit
