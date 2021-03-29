@@ -1,7 +1,7 @@
 body {
-  background-color: #59cd90;
+  background: linear-gradient(rgb(172, 80, 172), rgb(98, 87, 194), rgb(99, 99, 221), rgb(172, 80, 172));
   color: black;
-  font-family: "Fjalla One", Arial;
+  font-family: Fjalla One, "Arial;
 }
 
 form {
@@ -11,6 +11,7 @@ form {
 h1 {
   font-size: 3em;
   overflow: break;
+  text-align: center;
 }
 
 .overlay {
@@ -32,4 +33,12 @@ footer {
   bottom: 0;
   width: 100%;
   text-align: center;
+}
+
+.but-lo {
+  text-align: center; margin-top: 5%;
+}
+
+.but-in {
+  text-align: center; margin-top: 2%;
 }

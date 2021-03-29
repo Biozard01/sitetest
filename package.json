@@ -1,1 +1,30 @@
+<<<<<<< HEAD
 {}
+=======
+{
+  "name": "sitetest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "insert.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Biozard01/sitetest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Biozard01/sitetest/issues"
+  },
+  "homepage": "https://github.com/Biozard01/sitetest#readme"
+}
+>>>>>>> ec39858cb67dee801e72c1390888472664f8b2a6
