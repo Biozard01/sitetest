@@ -12,6 +12,11 @@ Pour activer un environnement virtuel sous bash
 
 ```python
 source auth/bin/activate
+OU
+```
+
+```powershell
+auth\Scripts\activate
 ```
 
 Pour installe les packages requis
