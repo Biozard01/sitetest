@@ -1,21 +1,23 @@
 # Installation
 
-Pour activer un environnement virtuel sous windows
+Pour créer l'environnement virtuel
 
 ```python
-.venv\Scripts\activate
+python3 -m venv auth
+OU
+py -m venv auth
+```
+
+Pour activer un environnement virtuel sous bash
+
+```python
+source auth/bin/activate
 ```
 
 Pour installe les packages requis
 
 ```python
 pip install -r requirements.txt
-```
-
-Pour setup
-
-```python
-$env:FLASK_APP = "filename.py"
 ```
 
 Pour lancer l'app
