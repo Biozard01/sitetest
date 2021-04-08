@@ -1,23 +1,25 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, render_template, request
+from flask_mysqldb import MySQL
 
-# init SQLAlchemy so we can use it later in our models
-db = SQLAlchemy()
+app = Flask(__name__)
 
-def create_app():
-    app = Flask(__name__)
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'flask'
 
-    app.config['SECRET_KEY'] = 'secret-key-goes-here'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+mysql = MySQL(app)
 
-    db.init_app(app)
+# Creating a connection cursor
+cursor = mysql.connection.cursor()
 
-    # blueprint for auth routes in our app
-    from .auth import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint)
+# Executing SQL Statements
+cursor.execute(''' CREATE TABLE table_name(field1, field2...) ''')
+cursor.execute(''' INSERT INTO table_name VALUES(v1,v2...) ''')
+cursor.execute(''' DELETE FROM table_name WHERE condition ''')
 
-    # blueprint for non-auth parts of app
-    from .main import main as main_blueprint
-    app.register_blueprint(main_blueprint)
+# Saving the Actions performed on the DB
+mysql.connection.commit()
 
-    return app
+# Closing the cursor
+cursor.close()
