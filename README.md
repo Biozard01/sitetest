@@ -3,8 +3,6 @@
 Pour créer l'environnement virtuel
 
 ```python
-python3 -m venv auth
-OU
 py -m venv auth
 ```
 
