@@ -1,11 +1,33 @@
-from flask import Flask, render_template, request
+from flask import Flask
 
-app = Flask(__name__, static_url_path="/")
-
-app.config["MYSQL_HOST"] = "localhost"
-app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = ""
-app.config["MYSQL_DB"] = "flask"
+from flask import Flask, render_template, flash, request, redirect, url_for
+from flask_sqlalchemy import SQLAlchemy
+ 
+#create the object of Flask
+app  = Flask(__name__)
+ 
+app.config['SECRET_KEY'] = 'hardsecretkey'
+ 
+ 
+#SqlAlchemy Database Configuration With Mysql
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:''@localhost:8888/flask' 
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+ 
+db = SQLAlchemy(app)
+ 
+#our model
+class Users(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(100), unique = True)
+    email = db.Column(db.String(100), unique = True)
+    password = db.Column(db.String(100))
+ 
+ 
+    def __init__(self, name, email, password):
+        self.name = username
+        self.email = email
+        self.password = password
+ 
 
 
 @app.route("/")
@@ -18,9 +40,11 @@ def profile():
     return render_template("profile.html")
 
 
-@app.route("/signup")
-def form():
-    return render_template("signup.html")
+
+@app.route('/signup' , methods = ['GET', 'POST'])
+def Login():
+ 
+    return render_template('signup.html')
 
 
 @app.route("/register", methods=["POST", "GET"])
@@ -39,6 +63,8 @@ def co():
         mysql.connection.commit()
         cursor.close()
         return f"Done!!"
+
+
 
 
 @app.route("/login")
