@@ -1,5 +1,5 @@
 from flask import Flask
-
+from forms import LoginForm, RegistrationForm
 from flask import Flask, render_template, flash, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
  
@@ -41,35 +41,43 @@ def profile():
 
 
 
-@app.route('/signup' , methods = ['GET', 'POST'])
-def Login():
- 
-    return render_template('signup.html')
+@app.route('/signup')
+def signup():
+    return render_template("signup.html")
 
 
 @app.route("/register", methods=["POST", "GET"])
-def co():
-    if request.method == "GET":
-        return "Login via the login Form"
-
-    if request.method == "POST":
-        name = request.form["nom"]
-        email = request.form["email"]
-        password = request.form["password"]
-        cursor = mysql.connection.cursor()
-        cursor.execute(
-            """ INSERT INTO info_table VALUES(%s,%s,%s)""", (name, email, password)
-        )
-        mysql.connection.commit()
-        cursor.close()
-        return f"Done!!"
-
-
+def register():
+    form = RegistrationForm()
+ 
+    if form.validate_on_submit():
+        hashed_password = generate_password_hash(form.password.data, method = 'sha256')
+        name = form.name.data
+        email = form.email.data
+        password = hashed_password
+ 
+        new_register = Users(name=name, email=email, password=password)
+ 
+        db.session.add(new_register)
+ 
+        db.session.commit()
+ 
+        flash("Registration was successfull, please login")
+ 
+        return redirect(url_for('index'))
+ 
+    return render_template('registration.html', form=form)
 
 
 @app.route("/login")
-def login():
-    return render_template("login.html")
+def Login():
+    form = LoginForm()
+    if form.validate_on_submit():
+        if request.form['username'] != 'codeloop' or request.form['password'] != '12345':
+            flash("Invalid Credentials, Please Try Again")
+        else:
+            return redirect(url_for('index'))
+    return render_template('index.html', form = form)
 
 
 @app.route("/logout")
