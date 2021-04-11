@@ -1,3 +1,0 @@
-Flask
-Flask-login
-Flask-SQLAlchemy

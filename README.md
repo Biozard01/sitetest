@@ -18,7 +18,7 @@ Pour activer un environnement virtuel sous windows
 auth\Scripts\activate
 ```
 
-Pour installe les packages requis
+Pour installer les packages requis
 
 ```python
 pip install -r requirements.txt
