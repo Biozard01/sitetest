@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from flask_mysqldb import MySQL
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="/")
 
 app.config["MYSQL_HOST"] = "localhost"
 app.config["MYSQL_USER"] = "root"
@@ -29,7 +29,7 @@ def form():
 @app.route("/login", methods=["POST", "GET"])
 def login():
     if request.method == "GET":
-        return "405"
+        return render_template("405.html")
 
     if request.method == "POST":
         name = request.form["nom"]
@@ -40,9 +40,12 @@ def login():
             """ INSERT INTO users FROM flask VALUES(%s,%s,%s)""",
             (name, password, email),
         )
+
         mysql.connection.commit()
         cursor.close()
         return f"Done!!"
+
+    return render_template(login.html)
 
 
 @app.route("/logout")
