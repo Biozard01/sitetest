@@ -1,31 +1,28 @@
-# Installation
+# Installation rapide de l'application
 
-Pour créer l'environnement virtuel
+Créer un environnement virtuel "auth" :
 
 ```python
-py -m venv auth
+python3 -m venv auth
 ```
 
-Pour activer un environnement virtuel sous bash
+Activer l'environnement virtuel :
 
-```python
+- sous bash
+
+```bash
 source auth/bin/activate
 ```
 
-Pour activer un environnement virtuel sous windows
+- sous windows
+
 
 ```powershell
 auth\Scripts\activate
 ```
 
-Pour installer les packages requis
+Lancer l'application :
 
 ```python
-pip install -r requirements.txt
-```
-
-Pour lancer l'app
-
-```python
-py -m flask run
+python3 -m flask run
 ```
