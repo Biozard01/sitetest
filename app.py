@@ -26,6 +26,24 @@ def form():
     return render_template("signup.html")
 
 
+@app.route("/register", methods=["POST", "GET"])
+def co():
+    if request.method == "GET":
+        return "Login via the login Form"
+
+    if request.method == "POST":
+        name = request.form["nom"]
+        email = request.form["email"]
+        password = request.form["password"]
+        cursor = mysql.connection.cursor()
+        cursor.execute(
+            """ INSERT INTO info_table VALUES(%s,%s,%s)""", (name, email, password)
+        )
+        mysql.connection.commit()
+        cursor.close()
+        return f"Done!!"
+
+
 @app.route("/login")
 def login():
     return render_template("login.html")
@@ -37,4 +55,4 @@ def logout():
 
 
 if __name__ == "__main__":
-    app.run(host="localhost", port=5000)
+    app.run(host="localhost", port=8080)

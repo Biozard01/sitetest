@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Sign Up Page</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
 </head>
 
@@ -15,10 +15,14 @@
             <h2>Accueil</h2>
         </button>
         <p>Créer un compte : </p>
-        <form>
+        <form action="/register" method="POST">
             <label for="username">Pseudo : </label>
             <br>
             <input id="username" name="username" type="text" required minlength="3" maxlength="15">
+            <br>
+            <label for="email">Email : </label>
+            <br>
+            <input id="email" name="email" type="email" required>
             <br>
             <label for="pw">Mot de passe : </label>
             <br>
