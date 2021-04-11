@@ -1,4 +1,4 @@
 Flask
 Flask-login
 Flask-SQLAlchemy
-flask_mysqldb
+flask_mysql
