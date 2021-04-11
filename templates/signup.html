@@ -1,30 +1,41 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
-{% block content %}
-<div class="column is-4 is-offset-4">
-    <h3 class="title">Inscritp</h3>
-    <div class="box">
-        <form method="POST" action="/signup">
-            <div class="field">
-                <div class="control">
-                    <input class="input is-large" type="email" name="email" placeholder="Email" autofocus="">
-                </div>
-            </div>
+<head>
+    <meta charset="utf-8">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+</head>
 
-            <div class="field">
-                <div class="control">
-                    <input class="input is-large" type="text" name="name" placeholder="Nom" autofocus="">
-                </div>
-            </div>
-
-            <div class="field">
-                <div class="control">
-                    <input class="input is-large" type="password" name="password" placeholder="Mot de passe">
-                </div>
-            </div>
-
-            <button class="button is-block is-info is-large is-fullwidth">Inscription</button>
+<body>
+    <section class="overlay">
+        <h1>Inscription</h1>
+        <button onclick="window.location.href='index.html';">
+            <h2>Accueil</h2>
+        </button>
+        <p>Créer un compte : </p>
+        <form>
+            <label for="username">Nom : </label>
+            <br>
+            <input id="username" name="username" type="text" required minlength="3" maxlength="15">
+            <br>
+            <label for="firstname">Prénom : </label>
+            <br>
+            <input id="firstname" name="firstname" type="text" required>
+            <br>
+            <label for="lastname">Nom de famille : </label>
+            <br>
+            <input id="lastname" name="lastname" type="text" required>
+            <br>
+            <label for="pw">Mot de passe : </label>
+            <br>
+            <input id="pw" name="pw" type="password" required minlength="8" maxlength="15">
+            <br>
+            <input type="submit" value="Submit">
         </form>
-    </div>
-</div>
-{% endblock %}
+    </section>
+
+</body>
+
+</html>
